@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { assets } from '../assets/assets.js';
 import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext.jsx';
 
 const Navbar = () => {
 
-  const [user, setUser] = useState(null);
+  const { user } = useContext(AppContext)
+
   const navigate = useNavigate();
 
   return (
@@ -22,7 +24,7 @@ const Navbar = () => {
         user ? 
           // this div is for the logged in state
           <div className='flex items-center gap-2 sm:gap-3'>
-            <button className='flex items-center gap-2 bg-blue-100
+            <button onClick={() => navigate('/buy')} className='flex items-center gap-2 bg-blue-100
              px-4 sm:px-6 py-1.5 sm:py-3 rounded-full
              hover:scale-105 transition-all duration-700 cursor-pointer'>
 
