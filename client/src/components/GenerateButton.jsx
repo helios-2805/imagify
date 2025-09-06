@@ -9,7 +9,7 @@ const GenerateButton = () => {
 
       <button className='
         inline-flex items-center gap-2 px-12 py-3 rounded-full bg-black
-        text-white m-auto hover:scale-105 transition-all duration-500
+        text-white m-auto hover:scale-105 transition-all duration-500 cursor-pointer
       '> Generate Images
         <img src= { assets.star_group } alt="stars img" 
         className='h-6'/>

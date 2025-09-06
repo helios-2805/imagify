@@ -8,7 +8,7 @@ const Footer = () => {
 
       <p className='
         flex-1 border-l border-gray-400 pl-4 text-sm text-gray-500 max-sm:hidden
-      '>Copyright &copy; <a href='https://www.github.com/helios-2805'>Helios</a> | All rights reserved.</p>
+      '>Copyright &copy; <a href='https://www.github.com/helios-2805' target='_blank'>Helios</a> | All rights reserved.</p>
 
       <div className='flex gap-2.5'>
         <img src={ assets.facebook_icon } alt="fb_icon" width={35}/>
