@@ -41,7 +41,7 @@ const Navbar = () => {
               text-gray-600 max-sm:hidden pl-4
             '>Hi, Helios</p>
 
-            <div className='relative group'>
+            <div className='relative group cursor-pointer'>
               <img className='
               w-10 drop-shadow
               ' src={ assets.profile_icon } alt='user logo'/>
