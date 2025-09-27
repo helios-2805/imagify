@@ -11,9 +11,15 @@ const Footer = () => {
       '>Copyright &copy; <a href='https://www.github.com/helios-2805' target='_blank'>Helios</a> | All rights reserved.</p>
 
       <div className='flex gap-2.5'>
-        <img src={ assets.facebook_icon } alt="fb_icon" width={35}/>
-        <img src={ assets.twitter_icon } alt="twit_icon" width={35}/>
-        <img src={ assets.instagram_icon } alt="insta_icon" width={35}/>
+        <a href='https://bento.me/helios-2805' target='_blank'>
+          <img className='cursor-pointer' src={ assets.facebook_icon } alt="fb_icon" width={35}/>
+        </a>
+        <a href='https://bento.me/helios-2805' target='_blank'>
+          <img className='cursor-pointer' src={ assets.twitter_icon } alt="twit_icon" width={35}/>
+        </a>
+        <a href='https://bento.me/helios-2805' target='_blank'>
+          <img className='cursor-pointer' src={ assets.instagram_icon } alt="insta_icon" width={35}/>
+        </a>
       </div>
     </div>
   )

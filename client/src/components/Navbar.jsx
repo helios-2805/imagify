@@ -5,7 +5,8 @@ import { AppContext } from '../context/AppContext.jsx';
 
 const Navbar = () => {
 
-  const { user } = useContext(AppContext)
+  const { user } = useContext(AppContext);
+  const { setShowLogin } = useContext(AppContext);
 
   const navigate = useNavigate();
 
@@ -71,7 +72,9 @@ const Navbar = () => {
               cursor-pointer
               bg-zinc-800 text-white
               px-7 py-2 sm:px-10 text-sm rounded-full
-            '>Login</button>
+            ' onClick={()=> setShowLogin(true)}>
+              Login
+            </button>
           </div>
         }
 
