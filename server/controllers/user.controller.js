@@ -106,5 +106,37 @@ const loginUser = async (req, res) => {
   }
 }
 
+const userCredits = async(req, res) => {
+  
+  try {
+    // we use this method based on the already existing user's userId
+    // but the thing is, we didn't send the userId in the req so
+    // we use a middleware to retrieve the userId from the db so that we use it tract credits.
 
-export { registerUser, loginUser }
+    const { userId } = req
+    // searching user deets from the user model by the "userId"
+    const user = await User.findById(userId)
+
+    res
+    .status(200)
+    .json({
+      success: true,
+      credits: user.creditBalance,
+      user: {
+        name: user.name
+      },
+      message: 'Users credit balance fetched!'
+    })
+
+  } catch(err) {
+    console.log('There occurred an error while fetching user credits' ,err)
+    res
+    .status(404)
+    .json({
+      success: false,
+      message: err.message
+    })
+  }
+}
+
+export { registerUser, loginUser, userCredits }

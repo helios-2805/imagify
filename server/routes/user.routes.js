@@ -1,10 +1,12 @@
-import { registerUser, loginUser } from '../controllers/user.controller.js'
+import { registerUser, loginUser, userCredits } from '../controllers/user.controller.js'
 import { Router } from 'express'
+import { userAuth } from '../middlewares/auth.middleware.js'
 
 const userRouter = Router()
 
 userRouter.post('/register', registerUser)
 userRouter.post('/login', loginUser)
+userRouter.post('/credits', userAuth, userCredits)
 
 export default userRouter
 
