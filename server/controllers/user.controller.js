@@ -1,4 +1,4 @@
-import { User } from '../models/user.model'
+import { User } from '../models/user.model.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
@@ -37,7 +37,7 @@ const registerUser = async (req, res) => {
       user: {
         name: user.name
       },
-      message: 'JWT successfully created!'
+      message: 'User successfully registered!'
     })
 
   } catch(err) {
@@ -96,7 +96,7 @@ const loginUser = async (req, res) => {
     }
 
   } catch(err) {
-    console.log('There was an error while logging in the user', err)
+    console.log('There occurred an error while logging in the user', err)
     res
     .status(400)
     .json({
@@ -105,3 +105,6 @@ const loginUser = async (req, res) => {
     })
   }
 }
+
+
+export { registerUser, loginUser }

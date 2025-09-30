@@ -1,11 +1,12 @@
 import express from 'express'
 import cors from 'cors'
-import 'dotenv/config'
-
+import dotenv from 'dotenv'
+// importing the mongodb config file
 import connectDB from './config/mongodb.js'
+import userRouter from './routes/user.routes.js'
 
 dotenv.config({
-  path: './env'
+  path: './.env'
 })
 
 const PORT = process.env.PORT || 4000
@@ -18,7 +19,7 @@ app.use(cors())
 // connecting the express application with the mongodb db
 await connectDB()
 
-
+app.use('/api/v1/user', userRouter)
 
 app.get('/', (req, res)=> {
   res.status(200).send('API Working!')
