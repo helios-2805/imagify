@@ -4,6 +4,10 @@ import 'dotenv/config'
 
 import connectDB from './config/mongodb.js'
 
+dotenv.config({
+  path: './env'
+})
+
 const PORT = process.env.PORT || 4000
 
 // create app

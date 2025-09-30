@@ -6,7 +6,12 @@ const connectDB = async () => {
     console.log('Database connected!');
   })
 
-  await mongoose.connect(`${process.env.MONGODB_URI}/imagify`)
+  try {
+    await mongoose.connect(`${process.env.MONGODB_URI}/imagify`)
+  } catch (error) {
+    console.log('MongoDb connection failed!', error)
+    process.exit(1)
+  }
 }
 
 export default connectDB
