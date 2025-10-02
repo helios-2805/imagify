@@ -5,8 +5,7 @@ import { AppContext } from '../context/AppContext.jsx';
 
 const Navbar = () => {
 
-  const { user } = useContext(AppContext);
-  const { setShowLogin } = useContext(AppContext);
+  const { user, setShowLogin, logout, credit } = useContext(AppContext);
 
   const navigate = useNavigate();
 
@@ -35,12 +34,12 @@ const Navbar = () => {
 
               <p className='
                 text-xs sm:text-sm font-medium text-gray-600
-              '>Credits left: 50</p>
+              '>Credits left: { credit }</p>
             </button>
 
             <p className='
               text-gray-600 max-sm:hidden pl-4
-            '>Hi, Helios</p>
+            '>Hi, { user.name }</p>
 
             <div className='relative group cursor-pointer'>
               <img className='
@@ -51,7 +50,7 @@ const Navbar = () => {
               top-0 right-0 z-10 text-black rounded pt-12'>
                 <ul className='list-none m-0 p-2 bg-white
                 rounded-md border text-sm'>
-                  <li className='
+                  <li onClick={logout} className='
                   py-1 px-2 cursor-pointer
                   '>Logout</li>
                 </ul>
